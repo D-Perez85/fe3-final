@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useContextGlobal } from "../Components/utils/global.context";
 import Button from "../Components/Button";
 
 const Detail = () => {
-  return (
+  const { state, dispatch } = useContextGlobal();
+  const { doctorSelected } = state;
+  const [loader, setLoader] = useState(true);
+
+  const params = useParams();
+  const url = `https://jsonplaceholder.typicode.com/users/${params.id}`;
+
+  useEffect(() => {
+    axios(url).then((res) =>
+      dispatch({ type: "GET_DOCTOR", payload: res.data })
+    );
+  }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 1100);
+  }, []);
+
+  return loader ? (
+    <div className="loader"></div>
+  ) : (
     <>
-      <div>
-        <h1>Detail Dentist id : ID</h1>
+      <div className="card-grid">
+        <h1>Detail Dentist id {doctorSelected.id}</h1>
         <table>
           <thead>
             <tr>
@@ -17,10 +42,10 @@ const Detail = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Nombre</td>
-              <td>Email</td>
-              <td>Telefono</td>
-              <td>Sitio Web</td>
+              <td>{doctorSelected.name}</td>
+              <td>{doctorSelected.email}</td>
+              <td>{doctorSelected.phone}</td>
+              <td>{doctorSelected.website}</td>
             </tr>
           </tbody>
         </table>

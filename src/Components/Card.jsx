@@ -1,18 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContextGlobal } from "./utils/global.context";
 
-const Card = ({item}) => {
+const Card = ({ item, isFav, handleRemoveSingle }) => {
+  const { dispatch, state } = useContextGlobal();
+
+  const addFav = () => {
+    const isAlreadyFav = state.favs.some((dentist) => dentist.id === item.id);
+    if (isAlreadyFav) {
+      alert("Este dentista ya está en la lista de favoritos.");
+    } else {
+      dispatch({ type: "ADD_FAV", payload: item });
+      alert("El doctor se agrego satisfactoriamente a tu lista.");
+    }
+  };
   return (
     <div className="card">
       <img className="imgDoctor" src="../../public/images/doctor.jpg" alt="" />
       <Link to={"/dentista/" + item.id}>
-        <h4>{item.name}</h4>
+          <h4>{item.name}</h4>
       </Link>
       <h4>{item.username}</h4>
-
-      <button className="button">Eliminar favorito ❌</button>
-
-      <button className="button">Agregar a favoritos⭐</button>
+      {isFav ? (
+        <button className="button" onClick={() => handleRemoveSingle(item.id)}>
+          Eliminar favorito ❌
+        </button>
+      ) : (
+        <button className="button" onClick={addFav}>
+          Agregar a favoritos⭐
+        </button>
+      )}
     </div>
   );
 };

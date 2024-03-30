@@ -1,13 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Card = () => {
+const Card = ({item}) => {
   return (
-    <div>
-      <img src="../../public/images/doctor.jpg" alt="" />
-      <h4>NAME</h4>
-      <h4>USERNAME</h4>
-      <button>Eliminar favorito ❌</button>
-      <button>Agregar a favoritos⭐</button>
+    <div className="card">
+      <img className="imgDoctor" src="../../public/images/doctor.jpg" alt="" />
+      <Link to={"/dentista/" + item.id}>
+        <h4>{item.name}</h4>
+      </Link>
+      <h4>{item.username}</h4>
+
+      <button className="button">Eliminar favorito ❌</button>
+
+      <button className="button">Agregar a favoritos⭐</button>
     </div>
   );
 };

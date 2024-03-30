@@ -6,117 +6,161 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
-.favButton{
-  background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
+/** BUTTONS **/
+.button-delAll{
+  align-items: center;
+  background-color: #b80b0b;
   border: none;
-  width: 100%;
+  border-radius: 5px;
+  color: #f2eeee;
   cursor: pointer;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  margin: 0 auto;
+  text-align: center;
+  width: 130px;
 }
-
+.button{
+  border: none;
+  cursor: pointer;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin-bottom: 5px;
+  padding: 8px;
+  width: 100%;
+}
 h1{
   text-align: center;
 }
-
+/** NAVBAR  **/
 nav{
+  align-items: center;
+  background-color: white;
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  justify-content: space-between;
+  margin: 0 auto;
   padding: 1rem;
 }
-
+.button-nav{
+  background-color: rgb(26 72 224 / 75%);
+  border-radius: 20px;
+  border: none;
+  color: whitesmoke;
+  font-size: 14px;
+  height: 42px;
+  padding: 10px;
+}
+.cont-title{
+  width: 20vh;
+}
+.cont-data{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+ul{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  text-align: center;
+  width: 319px;
+}
+li{
+  list-style: none;
+}
+h3{
+  font-family: 'Courier New', Courier, monospace;
+}
+h3:hover{
+  text-decoration: underline;
+}
+img{
+  width: 140px;
+}
 a{
-  color: #000;
-  text-decoration: none;
-  margin: 5px;
   cursor: pointer;
+  margin: 3px;
+  text-decoration: none;
 }
 a:hover{
   color: rgb(136, 136, 136);
 } 
-
-footer {
+/** CONTACT **/
+form{
   display: flex;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0 auto;
+  width: 300px;
 }
 
-footer > img{
+/** CARDS **/
+.card{
+  align-items: center;
+  border: 0.5px solid rgb(136, 136, 136);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  text-align: center;
   width: 200px;
+}
+.card:hover{
+  border: 0.5px solid rgb(206, 217, 142);
+}
+.card-grid{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  height: auto;
+  justify-content: center;
+  margin: 20px auto;
+  width: 1200px;
+}
+/** FOOTER **/
+footer {
+  bottom: 0;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  position: relative;
+  text-align: center;
+  width: 90%;
+}
+footer > img{
   margin: 0;
+  width: 200px;
 }
 footer > p{
   margin: 0;
   padding-top: 0.7rem;
 }
-
-form{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 300px;
-  height: 100px;
-  margin: 0 auto;
-}
-
-.card{
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-  border: 0.5px solid rgb(136, 136, 136);
-}
-
-.card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
-}
-
-.card-grid{
-  display: flex;
-  justify-content: space-evenly;
-  gap: 1rem;
-  width: 90vw;
-  height: auto;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
+/** DARK-LIGHT MODE **/
 .dark{
   background-color: #12121296;
   color: white;
 }
-.dark > a {
+.dark > h3 {
   color: white;
 }
+.dark .card {
+  background-color: #333;
+  color: #fff;
+}
+.dark a{
+  color: #fff;
+}
+.light{
+  background-color: #ffffff;
+  color: rgb(9, 9, 9);
+}
+.light a {
+  color: rgb(7, 7, 7)
+};

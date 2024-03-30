@@ -4,6 +4,7 @@ const Form = () => {
   const [contacto, setContacto] = useState({nombre: "", correo: ""});
   const [mostrar, setMostrar] = useState(false);
   const [error, setError] = useState(false);
+  
   const handleSubmit = (event) => {
     event.preventDefault();
     if (contacto.nombre.length >= 5 && validateEmail(contacto.correo)) {
@@ -16,6 +17,7 @@ const Form = () => {
       setMostrar(false)
     }, 2000);
   };
+  
   const validateEmail = (email) => {
     const emailRegex =  /^[^\s@]+@[^\s@]+.[^\s@]+.com$/;
     return emailRegex.test(email);

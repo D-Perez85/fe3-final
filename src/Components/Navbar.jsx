@@ -31,7 +31,7 @@ const Navbar = () => {
           </li>
         </ul>
         <button className="button-nav" onClick={toggleTheme}>
-          Modo
+          Modo {theme ? "Dark" : "Light"}
         </button>
       </div>
     </nav>

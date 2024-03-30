@@ -5,7 +5,6 @@ import Button from "../Components/Button";
 
 const Favs = () => {
   const { state, dispatch } = useContextGlobal();
-  console.log(state.favs.length);
   const [isFav, setIsFav] = useState(true);
   
   const handleRemoveAll = () => {
@@ -28,8 +27,7 @@ const Favs = () => {
             handleRemoveSingle={handleRemoveSingle}/>))}
       </div>
       {state.favs != 0 ? ("") : 
-      (
-        <p className="p-destacados">Ud. no tiene favoritos agregados aún!</p>)}
+      (<p className="p-destacados">Ud. no tiene favoritos agregados aún!</p>)}
       {state.favs.length >= 2 ? (
         <button onClick={handleRemoveAll} className="button-delAll">
           BORRAR TODOS

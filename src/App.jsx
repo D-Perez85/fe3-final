@@ -1,7 +1,5 @@
-
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
-
 
 function App() {
   return (
@@ -12,5 +10,4 @@ function App() {
       </div>
   );
 }
-
 export default App;

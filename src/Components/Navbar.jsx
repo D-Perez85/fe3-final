@@ -1,16 +1,29 @@
-import React from 'react'
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React from "react";
 
 const Navbar = () => {
 
   return (
     <nav>
-      {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
-      {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
-      <button>Change theme</button>
+      <div>
+        <h2>DH Odonto</h2>
+      </div>
+      <div>
+        <ul>
+          <li>
+              <h3>Home</h3>
+          </li>
+          <li>
+              <h3>Contacto</h3>
+          </li>
+          <li>
+              <h3>Destacados</h3>
+          </li>
+        </ul>
+        <button>
+          Modo 
+        </button>
+      </div>
     </nav>
-  )
-}
-
-export default Navbar
+  );
+};
+export default Navbar;

@@ -1,19 +1,33 @@
-import React from 'react'
-
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import React from "react";
+import Button from "../Components/Button";
 
 const Detail = () => {
- 
-  // Consumiendo el parametro dinamico de la URL deberan hacer un fetch a un user en especifico
-
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      {/* aqui deberan renderizar la informacion en detalle de un user en especifico */}
-      {/* Deberan mostrar el name - email - phone - website por cada user en especifico */}
+      <div>
+        <h1>Detail Dentist id : ID</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Sitio Web</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Nombre</td>
+              <td>Email</td>
+              <td>Telefono</td>
+              <td>Sitio Web</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <Button />
     </>
-  )
-}
+  );
+};
 
-export default Detail
+export default Detail;

@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { routes } from "./utils/routes";
 
 const Navbar = () => {
 
@@ -8,15 +10,21 @@ const Navbar = () => {
         <h2>DH Odonto</h2>
       </div>
       <div>
-        <ul>
+      <ul>
           <li>
+            <Link to={routes.home}>
               <h3>Home</h3>
+            </Link>
           </li>
           <li>
+            <Link to={routes.contacto}>
               <h3>Contacto</h3>
+            </Link>
           </li>
           <li>
+            <Link to={routes.favs}> 
               <h3>Destacados</h3>
+            </Link>
           </li>
         </ul>
         <button>

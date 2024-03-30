@@ -1,19 +1,18 @@
 import React from "react";
 import Card from "../Components/Card";
-
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
+import Button from "../Components/Button";
 
 const Favs = () => {
-
   return (
     <>
-      <h1>Dentists Favs</h1>
-      <div className="card-grid">
-        {/* este componente debe consumir los destacados del localStorage */}
-        {/* Deberan renderizar una Card por cada uno de ellos */}
+      <h1>Destacados</h1>
+      <div>
+        <Card />
       </div>
+      <p>Ud. no tiene favoritos agregados aún!</p>
+      <button>BORRAR TODOS</button>
+      <Button />
     </>
   );
 };
-
 export default Favs;

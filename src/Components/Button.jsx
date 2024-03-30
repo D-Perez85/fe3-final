@@ -1,8 +1,10 @@
 import React from "react";
- 
+import { useNavigate } from "react-router-dom";
+
 const Button = () => {
-   return (
-    <button>
+  const navigate = useNavigate();
+  return (
+    <button className="button-back" onClick={() => navigate(-1)}>
       VOLVER ATRAS
     </button>
   );

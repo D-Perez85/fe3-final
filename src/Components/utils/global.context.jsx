@@ -1,15 +1,38 @@
-import { createContext } from "react";
+import { createContext, useContext, useEffect, useReducer, useState } from "react";
+import { reducer } from "../../reducers/reducer";
+import axios from 'axios'
 
-export const initialState = {theme: "", data: []}
 
-export const ContextGlobal = createContext(undefined);
+export const initialState = {
+ themes:{
+  theme: "true" || "false",
+}, 
+data: [], 
+favs: JSON.parse(localStorage.getItem('favs')) || [], 
+doctorSelected: {},
+}
+export const ContextGlobal = createContext();
 
-export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+const ContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState); 
+  const {themes} = state;
+  const [theme, setTheme] = useState(themes.theme);
+  const url = `https://jsonplaceholder.typicode.com/users`; 
+
+  useEffect(() => {
+    localStorage.setItem('favs', JSON.stringify(state.favs))
+}, [state.favs])
+
+useEffect(() => {
+  axios(url)
+  .then(res => dispatch({type: 'GET_LIST', payload: res.data}))
+},[])
 
   return (
-    <ContextGlobal.Provider value={{}}>
+    <ContextGlobal.Provider value={{state, theme, setTheme, dispatch}}>
       {children}
     </ContextGlobal.Provider>
   );
 };
+export default ContextProvider; 
+export const useContextGlobal = () => useContext(ContextGlobal);

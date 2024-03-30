@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.contacto} element={<Contact />} />
-        {/* <Route path={routes.dentista} element={<Detail />} /> */}
+        <Route path={routes.dentista} element={<Detail />} />
         <Route path={routes.favs} element={<Favs />} />
         <Route path="*" element={<h1>Página no encontrada. ERROR 404</h1>} />
       </Routes>
@@ -22,5 +22,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

@@ -32,6 +32,18 @@ code {
   padding: 8px;
   width: 100%;
 }
+.button-back{
+  align-items: center;
+  background-color: rgb(204 15 41 / 93%);
+  border: none;
+  color: wheat;
+  display: flex;
+  height: 41px;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 90%;
+}
 h1{
   text-align: center;
 }
@@ -97,6 +109,35 @@ form{
   justify-content: space-around;
   margin: 0 auto;
   width: 300px;
+}
+.container-contacto{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
+.container-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+}
+label{
+  text-align: start;
+}
+form>input{
+  margin-top: 7px;
+}
+.button-form{
+  background-color: #0000007a;
+  border: none;
+  color: whitesmoke;
+  font-size: 15px;
+  margin-top: 14px;
+  padding: 4px;
+}
+h4{
+  margin-top: 0px;
 }
 
 /** CARDS **/

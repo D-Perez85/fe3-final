@@ -1,3 +1,4 @@
+import Button from "./Components/Button";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 
@@ -7,6 +8,7 @@ function App() {
         <h1>DH</h1>
           <Navbar/>
           <Footer/>
+          <Button/>
        </div>
   );
 }

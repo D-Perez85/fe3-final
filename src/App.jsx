@@ -7,7 +7,7 @@ function App() {
         <h1>DH</h1>
           <Navbar/>
           <Footer/>
-      </div>
+       </div>
   );
 }
 export default App;
